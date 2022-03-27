@@ -27,3 +27,15 @@ module.exports = {
   Tag,
   ProductTag,
 };
+
+
+// const foo = Foo.findByPk(id, {
+//   include: [{
+//     model: Bar,
+//     through: { attributes: [] }
+//   }]
+// })
+// console.log(foo.bars)
+
+// const foo = Foo.findByPk(id)
+// console.log(foo.getBars({ joinTableAttributes: [] }))
