@@ -17,12 +17,11 @@ Product.belongsTo(Category, {
 });
 
 // Products belongToMany Tags (through ProductTag)
-Product.hasMany(Tag, { through: 'ProductTag' });
+Product.belongsToMany(Tag, { through: ProductTag });
 // Tags belongToMany Products (through ProductTag)
 
-Tag.hasMany(Product, { through: 'ProductTag' });
+Tag.belongsToMany(Product, { through: ProductTag });
 
-Product.hasMany(ProductTag);
 
 module.exports = {
   Product,
@@ -30,15 +29,3 @@ module.exports = {
   Tag,
   ProductTag,
 };
-
-
-// const foo = Foo.findByPk(id, {
-//   include: [{
-//     model: Bar,
-//     through: { attributes: [] }
-//   }]
-// })
-// console.log(foo.bars)
-
-// const foo = Foo.findByPk(id)
-// console.log(foo.getBars({ joinTableAttributes: [] }))
