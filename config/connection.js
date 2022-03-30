@@ -1,3 +1,4 @@
+//Sequelize connection file including db connection
 require('dotenv').config();
 
 const Sequelize = require('sequelize');

@@ -4,7 +4,7 @@ const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
 
-
+//model relationship file
 
 // Categories have many Products
 Category.hasMany(Product, {})
@@ -17,7 +17,6 @@ Product.belongsTo(Category, {
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, { through: ProductTag });
 // Tags belongToMany Products (through ProductTag)
-
 Tag.belongsToMany(Product, { through: ProductTag });
 
 

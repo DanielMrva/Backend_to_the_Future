@@ -1,3 +1,5 @@
+//at the root route (ie: localhost:3001 for local dev)
+
 const router = require('express').Router();
 const apiRoutes = require('./api');
 
