@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
     });
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
+    return;
   }
 });
 
@@ -28,6 +29,7 @@ router.get('/:id', async (req, res) => {
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
+    return;
   }
 });
 
@@ -38,6 +40,7 @@ router.post('/', async (req, res) => {
     res.status(200).json(categoryData);
     } catch (err) {
       res.status(400).json(err);
+      return;
     }
 });
 
@@ -56,7 +59,8 @@ router.put('/:id', async (req, res) => {
     }
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
+    return;
   }
 });
 
@@ -69,12 +73,13 @@ router.delete('/:id', async (req, res) => {
       }
     });
     if (!categoryData) {
-      res.status(400).json({ message: 'No category found by that ID'});
+      res.status(404).json({ message: 'No category found by that ID'});
       return;
     }
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
+    return;
   }
 });
 

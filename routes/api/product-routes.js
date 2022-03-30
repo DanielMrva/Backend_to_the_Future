@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
+    return;
   }
   // find all products
   // be sure to include its associated Category and Tag data
@@ -31,11 +32,13 @@ router.get('/:id', async (req, res) => {
     });
     if (!productData) {
       res.status(404).json({message: 'No product found by that ID'});
+      return;
     }
     res.status(200).json(productData);
 
   } catch (err) {
     res.status(500).json(err);
+    return;
   }
 });
 
@@ -121,10 +124,12 @@ router.delete('/:id', async (req, res) => {
     });
     if (!productData) {
       res.status(404).json({message: 'No product found by that ID'});
+      return;
     }
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
+    return;
   }
   // delete one product by its `id` value
 });
